@@ -1,7 +1,7 @@
 @import "_bower";
 
 body {
-  background-color: royalblue;
+  background-color: black;
 }
 
 .media-object {
@@ -20,6 +20,7 @@ body {
     width: 100%;
     box-shadow: none;
     -webkit-box-shadow: none;
+    background-color: black;
 }
 .mega-dropdown-menu > li > ul {
   padding: 0;
@@ -30,7 +31,7 @@ body {
 }
 .mega-dropdown-menu > li > ul > li > a {
   display: block;
-  color: #222;
+  color: white;
   padding: 3px 5px;
 }
 .mega-dropdown-menu > li ul > li > a:hover,

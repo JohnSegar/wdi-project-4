@@ -9,38 +9,7 @@
 </head>
 <body ng-controller="UsersController as users">
   <header>
-    <nav class="navbar navbar-default">
-      <div class="container">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#" ui-sref-active="active" ui-sref="home">App</a>
-        </div>
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav navbar-right">
-            <li ng-show="users.checkLoggedIn()">
-              <a href="#" ui-sref="users">Users</a>
-            </li>
-            <li ng-hide="users.checkLoggedIn()">
-              <a href="#" ui-sref="login">Login</a>
-            </li>
-            <li ng-hide="users.checkLoggedIn()">
-              <a href="#" ui-sref="register">Register</a>
-            </li>
-            <li ng-show="users.checkLoggedIn()">
-              <a href="#" ui-sref="home" ng-click="users.logout()">Logout</a>
-            </li>
-          </ul>
-        </div><!-- /.navbar-collapse -->
-      </div><!-- /.container-fluid -->
-    </nav>
 
     <!-- BOOTSNIP -->
 
@@ -53,7 +22,7 @@
     			<span class="icon-bar"></span>
     			<span class="icon-bar"></span>
     		</button>
-    		<a class="navbar-brand" href="#">My Store</a>
+    		<a class="navbar-brand" href="#">My APP</a>
     	</div>
 
     	<div class="collapse navbar-collapse js-navbar-collapse">
@@ -69,7 +38,7 @@
                                     <div class="item active">
                                         <a href="#"><img src="http://cdn.akamai.steamstatic.com/steam/apps/311210/header.jpg?t=1463690787" class="img-responsive" alt="product 1"></a>
                                         <h4><small>COD</small></h4>
-                                        <button class="btn btn-primary" type="button">49,99 €</button> <button href="#" class="btn btn-default" type="button"><span class="glyphicon glyphicon-heart"></span> Add to Wishlist</button>
+                                        <button class="btn btn-primary" type="button">49,99 €</button> <button a href="#" class="btn btn-default" type="button"><span class="glyphicon glyphicon-heart"></span> Add to Wishlist</button>
                                     </div><!-- End Item -->
                                     <div class="item">
                                         <a href="#"><img src="http://cdn.akamai.steamstatic.com/steam/apps/72850/header.jpg?t=1447354493" class="img-responsive" alt="product 2"></a>
@@ -98,20 +67,20 @@
     					</li>
     					<li class="col-sm-3">
     						<ul>
-    							<li class="dropdown-header">Features</li>
+    							<li class="dropdown-header">News</li>
     							<li><a href="#">Auto Carousel</a></li>
                                 <li><a href="#">Carousel Control</a></li>
                                 <li><a href="#">Left & Right Navigation</a></li>
     							<li><a href="#">Four Columns Grid</a></li>
     							<li class="divider"></li>
-    							<li class="dropdown-header">Fonts</li>
+    							<li class="dropdown-header">Our Favourites</li>
                                 <li><a href="#">Glyphicon</a></li>
     							<li><a href="#">Google Fonts</a></li>
     						</ul>
     					</li>
     					<li class="col-sm-3">
     						<ul>
-    							<li class="dropdown-header">Plus</li>
+    							<li class="dropdown-header">Trailers</li>
     							<li><a href="#">Navbar Inverse</a></li>
     							<li><a href="#">Pull Right Elements</a></li>
     							<li><a href="#">Coloured Headers</a></li>
@@ -120,7 +89,7 @@
     					</li>
     					<li class="col-sm-3">
     						<ul>
-    							<li class="dropdown-header">Much more</li>
+    							<li class="dropdown-header">Community</li>
                                 <li><a href="#">Easy to Customize</a></li>
     							<li><a href="#">Calls to action</a></li>
     							<li><a href="#">Custom Fonts</a></li>
@@ -130,24 +99,24 @@
     				</ul>
     			</li>
                 <li class="dropdown mega-dropdown">
-        			<a href="#" class="dropdown-toggle" data-toggle="dropdown">XBOX <span class="caret"></span></a>
+        			<a href="#" class="dropdown-toggle" data-toggle="dropdown">XBOX1 <span class="caret"></span></a>
     				<ul class="dropdown-menu mega-dropdown-menu">
     					<li class="col-sm-3">
         					<ul>
-    							<li class="dropdown-header">Features</li>
+    							<li class="dropdown-header">News</li>
     							<li><a href="#">Auto Carousel</a></li>
                                 <li><a href="#">Carousel Control</a></li>
                                 <li><a href="#">Left & Right Navigation</a></li>
     							<li><a href="#">Four Columns Grid</a></li>
     							<li class="divider"></li>
-    							<li class="dropdown-header">Fonts</li>
+    							<li class="dropdown-header">Our Favourites</li>
                                 <li><a href="#">Glyphicon</a></li>
     							<li><a href="#">Google Fonts</a></li>
     						</ul>
     					</li>
     					<li class="col-sm-3">
     						<ul>
-    							<li class="dropdown-header">Plus</li>
+    							<li class="dropdown-header">Trailers</li>
     							<li><a href="#">Navbar Inverse</a></li>
     							<li><a href="#">Pull Right Elements</a></li>
     							<li><a href="#">Coloured Headers</a></li>
@@ -156,7 +125,7 @@
     					</li>
     					<li class="col-sm-3">
     						<ul>
-    							<li class="dropdown-header">Much more</li>
+    							<li class="dropdown-header">Community</li>
                                 <li><a href="#">Easy to Customize</a></li>
     							<li><a href="#">Calls to action</a></li>
     							<li><a href="#">Custom Fonts</a></li>
@@ -200,7 +169,7 @@
     					</li>
     				</ul>
     			</li>
-                <li><a href="#">Store locator</a></li>
+                <li><a href="#">Conventions</a></li>
     		</ul>
             <ul class="nav navbar-nav navbar-right">
             <li class="dropdown">
@@ -213,16 +182,26 @@
                 <li><a href="#">Separated link</a></li>
               </ul>
             </li>
-            <li><a href="#">My cart (0) items</a></li>
+            <li ng-show="users.checkLoggedIn()">
+              <a href="#" ui-sref="users">Users</a>
+            </li>
+            <li ng-hide="users.checkLoggedIn()">
+              <a href="#" ui-sref="login">Login</a>
+            </li>
+            <li ng-hide="users.checkLoggedIn()">
+              <a href="#" ui-sref="register">Register</a>
+            </li>
+            <li ng-show="users.checkLoggedIn()">
+              <a href="#" ui-sref="home" ng-click="users.logout()">Logout</a>
+            </li>
           </ul>
     	</div><!-- /.nav-collapse -->
       </nav>
     </div>
-
-
   </header>
 
   <main class="container" ui-view></main>
+
 
 </body>
 </html>
