@@ -21,5 +21,13 @@
     "morgan": "~1.0.0",
     "passport": "^0.2.0",
     "passport-local": "~0.1.6"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-jshint": "^1.0.0",
+    "grunt-contrib-uglify": "^1.0.1",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-sass": "^1.2.0"
   }
 }
