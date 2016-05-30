@@ -10,10 +10,10 @@ function CurrentUser(TokenService){
     self.user = getUser();
 
     function getUser() {
-        return self.user ? self.user : TokenService.decodeToken();
+      return self.user ? self.user : TokenService.decodeToken();
     }
 
     function clearUser() {
-
+      return TokenService.removeToken();
     }
 }

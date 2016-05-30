@@ -45,10 +45,10 @@ function UsersController(User, CurrentUser, $state){
   }
 
   function logout() {
-  self.all         = [];
-  self.currentUser = null;
-  CurrentUser.clearUser();
-}
+    self.all         = [];
+    self.currentUser = null;
+    CurrentUser.clearUser();
+  }
 
   function checkLoggedIn() {
     self.currentUser = CurrentUser.getUser();
