@@ -1,7 +1,22 @@
 var LocalStrategy = require("passport-local").Strategy;
+var SteamStrategy = require("passport-steam").Strategy;
 var User          = require("../models/user");
+var config        = require("./config");
 
 module.exports = function(passport) {
+
+  passport.use('steam', new SteamStrategy({
+    returnURL: 'http://localhost:3000/api/steam/callback',
+    realm: 'http://localhost:3000/',
+    apiKey: config.steam_api_key
+  }, function(identifier, profile, done) {
+    console.log(identifier, profile);
+
+    // User.findByOpenID({ openId: identifier }, function (err, user) {
+    //   if (err) return done(err, false, { message: "Something went wrong." });
+    //   return done(null, user);
+    // });
+  }));
 
   passport.use('local-signup', new LocalStrategy({
     usernameField: "email",

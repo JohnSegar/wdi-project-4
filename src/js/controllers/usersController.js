@@ -2,8 +2,8 @@ angular
   .module('logging')
   .controller('UsersController', UsersController);
 
-UsersController.$inject = ['User', 'CurrentUser', '$state'];
-function UsersController(User, CurrentUser, $state){
+UsersController.$inject = ['User', 'CurrentUser', '$state', '$http', 'API'];
+function UsersController(User, CurrentUser, $state, $http, API){
 
   var self = this;
 
@@ -16,6 +16,29 @@ function UsersController(User, CurrentUser, $state){
   self.login         = login;
   self.logout        = logout;
   self.checkLoggedIn = checkLoggedIn;
+
+  self.steam = function(){
+    var key  = "24BCB049F320ADFA59588AF7C09EB761";
+    var name = "quagmire056";
+
+    $http({
+      method: "GET",
+      url: "http://api.steampowered.com/ISteamUser/ResolveVanityURL/v0001/?key="+key+"&vanityurl="+name,
+      dataType: "jsonp"
+    }).then(function(response){
+      console.log(response);
+      // $http({
+      //   method: 'GET',
+      //   url: "http://api.steampowered.com/ISteamUser/GetFriendList/v0001/?key="+key+"&steamid=76561197960435530&relationship=friend"
+      // }).then(function(response) {
+      //   console.log(response);
+      // }, function(err) {
+      //   console.log(err);
+      // });
+    }, function(err) {
+      console.log(err);
+    });
+  };
 
   function getUsers() {
     User.query(function(data){
