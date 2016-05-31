@@ -56837,9 +56837,9 @@ function UsersEditController(User, $stateParams, $state, $http){
       params: { q: query }
     }).then(function(response){
       console.log(response);
-      // return response.data.results.map(function(item){
-      //   return item.formatted_address;
-      // });
+      return response.data.results.map(function(item){
+        return item.formatted_address;
+      });
     });
   };
 
