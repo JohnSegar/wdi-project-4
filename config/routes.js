@@ -15,6 +15,7 @@ router.route('/users')
 
 router.route('/users/:id')
   .get(usersController.usersShow)
+  .put(usersController.usersUpdate)
   .patch(usersController.usersUpdate)
   .delete(usersController.usersDelete);
 

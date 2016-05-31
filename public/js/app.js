@@ -49402,12 +49402,20 @@ angular.module('ui.router.state')
   .filter('includedByState', $IncludedByStateFilter);
 })(window, window.angular);
 angular
-  .module('logging', ['angular-jwt', 'ngResource', 'ui.router'])
-  .constant('API', 'http://localhost:3000/api')
-  .config(MainRouter)
-  .config(function($httpProvider) {
-    $httpProvider.interceptors.push('authInterceptor');
-  });
+  .module('play', ['angular-jwt', 'ngResource', 'ui.router']);
+
+angular
+  .module('play')
+  .config(Interceptor);
+
+Interceptor.$inject = ["$httpProvider"];
+function Interceptor($httpProvider) {
+  $httpProvider.interceptors.push('authInterceptor');
+}
+
+angular
+  .module('play')
+  .config(MainRouter);
 
 MainRouter.$inject = ['$stateProvider', '$urlRouterProvider'];
 function MainRouter($stateProvider, $urlRouterProvider) {
@@ -49424,29 +49432,58 @@ function MainRouter($stateProvider, $urlRouterProvider) {
       url: "/register",
       templateUrl: "./js/views/authentications/register.html"
     })
-    .state('users', {
+    .state('usersIndex', {
       url: "/users",
       templateUrl: "./js/views/users/index.html"
     })
-    .state('user', {
+    .state('usersShow', {
       url: "/users/:id",
       templateUrl: "./js/views/users/show.html",
-      controller: function($scope, $stateParams, User) {
-        User.get({ id: $stateParams.id }, function(res){
-          $scope.$parent.users.user = res.user;
-        });
-      }
+      controller: "usersShowController",
+      controllerAs: "usersShow"
+    })
+    .state('usersEdit', {
+      url: "/users/:id/edit",
+      templateUrl: "./js/views/users/edit.html",
+      controller: "usersEditController",
+      controllerAs: "usersEdit"
     });
 
   $urlRouterProvider.otherwise("/");
 }
 
 angular
-  .module('logging')
-  .controller('UsersController', UsersController);
+  .module('play')
+  .constant('API', 'http://localhost:3000/api');
 
-UsersController.$inject = ['User', 'CurrentUser', '$state'];
-function UsersController(User, CurrentUser, $state){
+angular
+  .module('play')
+  .controller('usersEditController', UsersEditController);
+
+UsersEditController.$inject = ['User', '$stateParams', '$state'];
+function UsersEditController(User, $stateParams, $state){
+  var vm = this;
+
+  vm.update = function(){
+    console.log(vm.user);
+    User.update({id: vm.user._id}, vm.user).$promise.then(function(data){
+      console.log(data);
+      $state.go("usersShow", {id: data.user._id});
+    });
+  };
+
+  User.get($stateParams).$promise.then(function(data){
+    vm.user = data.user;
+  });
+
+}
+
+angular
+  .module('play')
+  .controller('usersIndexController', UsersIndexController);
+
+UsersIndexController.$inject = ['User', 'CurrentUser', '$state'];
+function UsersIndexController(User, CurrentUser, $state){
 
   var self = this;
 
@@ -49470,7 +49507,7 @@ function UsersController(User, CurrentUser, $state){
     var token = res.token ? res.token : null;
     if (token) {
       self.getUsers();
-      $state.go('home');
+      $state.go('usersIndex');
     }
     self.currentUser = CurrentUser.getUser();
   }
@@ -49506,7 +49543,21 @@ function UsersController(User, CurrentUser, $state){
 }
 
 angular
-  .module('logging')
+  .module('play')
+  .controller('usersShowController', UsersShowController);
+
+UsersShowController.$inject = ['User', 'CurrentUser',  '$stateParams'];
+function UsersShowController(User, CurrentUser, $stateParams){
+  var vm = this;
+
+  User.get($stateParams).$promise.then(function(data){
+    vm.user = data.user;
+  });
+
+}
+
+angular
+  .module('play')
   .factory('User', User);
 
 User.$inject = ['$resource', 'API'];
@@ -49519,6 +49570,7 @@ function User($resource, API){
       'query':     { method: 'GET', isArray: false},
       'remove':    { method: 'DELETE' },
       'delete':    { method: 'DELETE' },
+      'update':    { method: 'PUT' },
       'register': {
         url: API +'/register',
         method: "POST"
@@ -49532,7 +49584,7 @@ function User($resource, API){
 }
 
 angular
-  .module('logging')
+  .module('play')
   .factory('authInterceptor', AuthInterceptor);
 
 AuthInterceptor.$inject = ['API', 'TokenService'];
@@ -49559,7 +49611,7 @@ function AuthInterceptor(API, TokenService) {
 }
 
 angular
-  .module('logging')
+  .module('play')
   .service("CurrentUser", CurrentUser);
 
 CurrentUser.$inject = ["TokenService"];
@@ -49579,219 +49631,7 @@ function CurrentUser(TokenService){
 }
 
 angular
-  .module('logging')
-  .service('TokenService', TokenService);
-
-TokenService.$inject = ["$window", "jwtHelper"];
-function TokenService($window, jwtHelper){
-  var self = this;
-
-  self.setToken = setToken;
-  self.getToken = getToken;
-  self.removeToken = removeToken;
-  self.decodeToken = decodeToken;
-
-  function setToken(token){
-    return $window.localStorage.setItem('auth-token', token);
-  }
-
-  function getToken(){
-    return $window.localStorage['auth-token'];
-  }
-
-  function removeToken(){
-    return $window.localStorage.removeItem('auth-token');
-  }
-
-  function clearUser(){
-  TokenService.removeToken();
-  self.user = null;
-  }
-
-  function decodeToken() {
-  var token = self.getToken();
-  if (token) {
-    var decodedUser = jwtHelper.decodeToken(token);
-    return token ? decodedUser._doc : null;
-    }
-  }
-}
-
-$(document).ready(function(){
-    $(".dropdown").hover(
-        function() {
-            $('.dropdown-menu', this).not('.in .dropdown-menu').stop(true,true).slideDown("400");
-            $(this).toggleClass('open');
-        },
-        function() {
-            $('.dropdown-menu', this).not('.in .dropdown-menu').stop(true,true).slideUp("400");
-            $(this).toggleClass('open');
-        }
-    );
-});
-
-angular
-  .module('logging')
-  .controller('UsersController', UsersController);
-
-UsersController.$inject = ['User', 'CurrentUser', '$state', '$http', 'API'];
-function UsersController(User, CurrentUser, $state, $http, API){
-
-  var self = this;
-
-  self.all           = [];
-  self.user          = null;
-  self.currentUser   = null;
-  self.error         = null;
-  self.getUsers      = getUsers;
-  self.register      = register;
-  self.login         = login;
-  self.logout        = logout;
-  self.checkLoggedIn = checkLoggedIn;
-
-  self.steam = function(){
-    var key  = "24BCB049F320ADFA59588AF7C09EB761";
-    var name = "quagmire056";
-
-    $http({
-      method: "GET",
-      url: "http://api.steampowered.com/ISteamUser/ResolveVanityURL/v0001/?key="+key+"&vanityurl="+name,
-      dataType: "jsonp"
-    }).then(function(response){
-      console.log(response);
-      // $http({
-      //   method: 'GET',
-      //   url: "http://api.steampowered.com/ISteamUser/GetFriendList/v0001/?key="+key+"&steamid=76561197960435530&relationship=friend"
-      // }).then(function(response) {
-      //   console.log(response);
-      // }, function(err) {
-      //   console.log(err);
-      // });
-    }, function(err) {
-      console.log(err);
-    });
-  };
-
-  function getUsers() {
-    User.query(function(data){
-      self.all = data.users;
-    });
-  }
-
-  function handleLogin(res) {
-    var token = res.token ? res.token : null;
-    if (token) {
-      self.getUsers();
-      $state.go('home');
-    }
-    self.currentUser = CurrentUser.getUser();
-  }
-
-  function handleError(e) {
-    self.error = "Something went wrong.";
-  }
-
-  function register() {
-    User.register(self.user, handleLogin, handleError);
-  }
-
-  function login() {
-    User.login(self.user, handleLogin, handleError);
-  }
-
-  function logout() {
-    self.all         = [];
-    self.currentUser = null;
-    CurrentUser.clearUser();
-  }
-
-  function checkLoggedIn() {
-    self.currentUser = CurrentUser.getUser();
-    return !!self.currentUser;
-  }
-
-  if (checkLoggedIn()) {
-    self.getUsers();
-  }
-
-  return self;
-}
-
-angular
-  .module('logging')
-  .factory('User', User);
-
-User.$inject = ['$resource', 'API'];
-function User($resource, API){
-
-  return $resource(
-    API+'/users/:id', {id: '@id'},
-    { 'get':       { method: 'GET' },
-      'save':      { method: 'POST' },
-      'query':     { method: 'GET', isArray: false},
-      'remove':    { method: 'DELETE' },
-      'delete':    { method: 'DELETE' },
-      'register': {
-        url: API +'/register',
-        method: "POST"
-      },
-      'login':      {
-        url: API + '/login',
-        method: "POST"
-      }
-    }
-  );
-}
-
-angular
-  .module('logging')
-  .factory('authInterceptor', AuthInterceptor);
-
-AuthInterceptor.$inject = ['API', 'TokenService'];
-function AuthInterceptor(API, TokenService) {
-
-  return {
-    request: function(config) {
-  var token = TokenService.getToken();
-
-  if (config.url.indexOf(API) === 0 && token) {
-    config.headers.Authorization = 'Bearer ' + token;
-  }
-  return config;
-},
-    response: function(res){
-      // console.log(res);
-
-      if (res.config.url.indexOf(API) === 0 && res.data.token) {
-        TokenService.setToken(res.data.token);
-      }
-      return res;
-    }
-  };
-}
-
-angular
-  .module('logging')
-  .service("CurrentUser", CurrentUser);
-
-CurrentUser.$inject = ["TokenService"];
-function CurrentUser(TokenService){
-    var self = this;
-    self.getUser = getUser;
-    self.clearUser = clearUser;
-    self.user = getUser();
-
-    function getUser() {
-      return self.user ? self.user : TokenService.decodeToken();
-    }
-
-    function clearUser() {
-      return TokenService.removeToken();
-    }
-}
-
-angular
-  .module('logging')
+  .module('play')
   .service('TokenService', TokenService);
 
 TokenService.$inject = ["$window", "jwtHelper"];

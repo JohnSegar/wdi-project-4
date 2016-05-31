@@ -1,22 +1,8 @@
 var LocalStrategy = require("passport-local").Strategy;
-var SteamStrategy = require("passport-steam").Strategy;
 var User          = require("../models/user");
 var config        = require("./config");
 
 module.exports = function(passport) {
-
-  passport.use('steam', new SteamStrategy({
-    returnURL: 'http://localhost:3000/api/steam/callback',
-    realm: 'http://localhost:3000/',
-    apiKey: config.steam_api_key
-  }, function(identifier, profile, done) {
-    console.log(identifier, profile);
-
-    // User.findByOpenID({ openId: identifier }, function (err, user) {
-    //   if (err) return done(err, false, { message: "Something went wrong." });
-    //   return done(null, user);
-    // });
-  }));
 
   passport.use('local-signup', new LocalStrategy({
     usernameField: "email",
@@ -25,7 +11,7 @@ module.exports = function(passport) {
   }, function(req, email, password, done) {
 
     // Find a user with this email
-    User.findOne({ 'local.email' : email }, function(err, user) {
+    User.findOne({ 'email' : email }, function(err, user) {
       // Error found
       if (err) return done(err, false, { message: "Something went wrong." });
 
@@ -33,11 +19,11 @@ module.exports = function(passport) {
       if (user) return done(null, false, { message: "Please choose another email." });
 
       var newUser            = new User();
-      newUser.local.email    = email;
-      newUser.local.username = req.body.username;
-      newUser.local.fullname = req.body.fullname;
-      newUser.local.image    = req.body.image;
-      newUser.local.password = User.encrypt(password);
+      newUser.email    = email;
+      newUser.username = req.body.username;
+      newUser.fullname = req.body.fullname;
+      newUser.image    = req.body.image;
+      newUser.password = User.encrypt(password);
 
       newUser.save(function(err, user) {
         // Error found
@@ -50,4 +36,4 @@ module.exports = function(passport) {
     });
   }));
 
-}
+};

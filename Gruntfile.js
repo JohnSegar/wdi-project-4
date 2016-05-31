@@ -57,14 +57,14 @@ module.exports = function(grunt) {
                 }
             },
             scss: {
-                files: ['public/src/scss/**/*.scss'],
+                files: ['src/scss/**/*.scss'],
                 tasks: ['sass'],
                 options: {
                     livereload: true
                 }
             },
             js: {
-                files: ['public/src/js/**/*.js'],
+                files: ['src/js/**/*.js'],
                 tasks: ['jshint', 'concat', 'uglify'],
                 options: {
                     livereload: true
