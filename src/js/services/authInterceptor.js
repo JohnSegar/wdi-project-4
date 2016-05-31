@@ -7,13 +7,14 @@ function AuthInterceptor(API, TokenService) {
 
   return {
     request: function(config) {
-  var token = TokenService.getToken();
+      console.log(config);
+      var token = TokenService.getToken();
 
-  if (config.url.indexOf(API) === 0 && token) {
-    config.headers.Authorization = 'Bearer ' + token;
-  }
-  return config;
-},
+      if (config.url.indexOf(API) === 0 && token) {
+        config.headers.Authorization = 'Bearer ' + token;
+      }
+      return config;
+    },
     response: function(res){
       // console.log(res);
 

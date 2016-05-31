@@ -15,6 +15,10 @@ module.exports = function(grunt) {
                     bootstrap: [
                         'dist/js/bootstrap.js',
                         'dist/css/bootstrap.css'
+                    ],
+                    "ui.bootstrap": [
+                      'src/typeahead/typeahead.js',
+                      'src/typeahead/typeahead.css',              
                     ]
                 },
                 dependencies: {
