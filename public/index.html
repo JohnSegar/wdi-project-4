@@ -30,6 +30,9 @@
                   <a ui-sref="usersIndex">Users</a>
                 </li>
                 <li ng-show="users.checkLoggedIn()">
+                  <a ui-sref="usersSameGame">Players</a>
+                </li>
+                <li ng-show="users.checkLoggedIn()">
                   <a ui-sref="usersShow({id: users.currentUser._id })">Profile</a>
                 </li>
                 <li ng-show="users.checkLoggedIn()">

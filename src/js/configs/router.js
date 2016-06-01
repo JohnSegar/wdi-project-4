@@ -32,6 +32,12 @@ function MainRouter($stateProvider, $urlRouterProvider) {
       templateUrl: "./js/views/users/edit.html",
       controller: "usersEditController",
       controllerAs: "usersEdit"
+    })
+    .state('usersSameGame', {
+      url: "/sameGame",
+      templateUrl: "./js/views/users/sameGame.html",
+      controller: "usersSameGameController",
+      controllerAs: "usersSameGame"
     });
 
   $urlRouterProvider.otherwise("/");

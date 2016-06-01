@@ -56799,6 +56799,12 @@ function MainRouter($stateProvider, $urlRouterProvider) {
       templateUrl: "./js/views/users/edit.html",
       controller: "usersEditController",
       controllerAs: "usersEdit"
+    })
+    .state('usersSameGame', {
+      url: "/sameGame",
+      templateUrl: "./js/views/users/sameGame.html",
+      controller: "usersSameGameController",
+      controllerAs: "usersSameGame"
     });
 
   $urlRouterProvider.otherwise("/");
@@ -56904,6 +56910,15 @@ function UsersIndexController(User, CurrentUser, $state){
 
   return self;
 }
+
+angular
+  .module('play')
+  .controller('usersSameGameController', UsersSameGameController);
+
+  UsersSameGameController.$inject = ['$state'];
+  function UsersSameGameController(){
+
+  }
 
 angular
   .module('play')
