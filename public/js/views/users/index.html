@@ -2,6 +2,7 @@
   <input ng-model="query" type="text"
     placeholder="Filter by" autofocus>
 </form>
+<div class="showing">
 <ul ng-repeat="user in users.all | filter:query | orderBy: 'currentlyPlaying' ">
   <li>
     <img class="media-object" ng-src="{{ user.image }} ">
@@ -16,6 +17,7 @@
     <p>{{ user.email }}</p>
   </li> -->
 </ul>
+</div>
 
 <!-- <div class="row">
   <div class="col-sm-6 col-md-4">

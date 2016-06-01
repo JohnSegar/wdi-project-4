@@ -7946,8 +7946,21 @@ button.close {
 /*# sourceMappingURL=bootstrap.css.map */
 .media-object {
   max-width: 50px;
+  list-style-type: none;
 }
 
 body {
+  list-style-type: none;
+}
+
+.row {
+  list-style-type: none;
+}
+
+.ng-binding {
+  list-style-type: none;
+}
+
+.media-left.ng-binding {
   list-style-type: none;
 }
