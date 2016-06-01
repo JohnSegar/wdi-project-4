@@ -12,7 +12,7 @@
     <input type="text" class="form-control" id="image" placeholder="Image" data-ng-model="usersEdit.user.image">
   </div>
 
-  <input type="text" data-ng-model="usersEdit.user.currentlyPlaying" placeholder="Currently playing" uib-typeahead="game for game in usersEdit.getGame($viewValue)" typeahead-loading="loadingGames" typeahead-no-results="noResults" class="form-control">
+  <input type="text" data-ng-model="usersEdit.user.currentlyPlaying" placeholder="Currently playing" uib-typeahead="game for game in usersEdit.getGame($viewValue)" typeahead-loading="loadingGames" typeahead-no-results="noResults" class="form-control" id="currentlyPlaying.name">
     <i ng-show="loadingGames" class="glyphicon glyphicon-refresh"></i>
     <div ng-show="noResults">
       <i class="glyphicon glyphicon-remove"></i> No Results Found
