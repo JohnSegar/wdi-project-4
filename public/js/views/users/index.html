@@ -1,17 +1,18 @@
-<ul>
-  <li ng-repeat="user in users.all | filter:{ users: by_currentUser.currentlyPlaying}">
-    <ul>
-      <li>
-        <img class="media-object" ng-src="{{ user.image }} ">
-      </li>
-      <li>
-        <a data-ui-sref="usersShow({ id: user._id })">
-          <h4 class="media-left">{{ user.fullname }}</h4>
-        </a>
-      </li>
-      <li>
-        <p>{{ user.email }}</p>
-      </li>
-    </ul>
+  <form class="form-inline">
+  <input ng-model="query" type="text"
+    placeholder="Filter by" autofocus>
+</form>
+<ul ng-repeat="user in users.all | filter:query | orderBy: 'currentlyPlaying' ">
+  <li>
+    <img class="media-object" ng-src="{{ user.image }} ">
+  </li>
+  <li>
+    <a data-ui-sref="usersShow({ id: user._id })">
+      <h4 class="media-left">{{ user.fullname }}</h4>
+    </a>
+  </li>
+  <li>Playing {{user.currentlyPlaying}}</li>
+  <li>
+    <p>{{ user.email }}</p>
   </li>
 </ul>
