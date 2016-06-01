@@ -18,7 +18,7 @@ var userSchema = new mongoose.Schema({
 });
 
 // Create an instance (.methods) method to validate a password
-userSchema.methods.validatePassword = function(password) {
+userSchema.methods.validPassword = function(password) {
   return bcrypt.compareSync(password, this.passwordHash, null);
 };
 

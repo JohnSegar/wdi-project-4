@@ -11,12 +11,8 @@
     <label for="image">Image</label>
     <input type="text" class="form-control" id="image" placeholder="Image" data-ng-model="usersEdit.user.image">
   </div>
-  <div class="form-group">
-    <label for="currentlyPlaying">Currently playing</label>
-    <input type="text" class="form-control" id="currentlyPlaying" placeholder="Currently playing" data-ng-model="usersEdit.user.currentlyPlaying">
-  </div>
 
-  <input type="text" ng-model="asyncSelected" placeholder="Pick a game" uib-typeahead="game for game in usersEdit.getGame($viewValue)" typeahead-loading="loadingGames" typeahead-no-results="noResults" class="form-control">
+  <input type="text" data-ng-model="usersEdit.user.currentlyPlaying" placeholder="Currently playing" uib-typeahead="game for game in usersEdit.getGame($viewValue)" typeahead-loading="loadingGames" typeahead-no-results="noResults" class="form-control">
     <i ng-show="loadingGames" class="glyphicon glyphicon-refresh"></i>
     <div ng-show="noResults">
       <i class="glyphicon glyphicon-remove"></i> No Results Found

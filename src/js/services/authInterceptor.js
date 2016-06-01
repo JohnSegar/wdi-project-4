@@ -7,7 +7,6 @@ function AuthInterceptor(API, TokenService) {
 
   return {
     request: function(config) {
-      console.log(config);
       var token = TokenService.getToken();
 
       if (config.url.indexOf(API) === 0 && token) {
