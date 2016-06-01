@@ -1,5 +1,5 @@
 <ul>
-  <li ng-repeat="user in users.all">
+  <li ng-repeat="user in users.all | filter:{ users: by_currentUser.currentlyPlaying}">
     <ul>
       <li>
         <img class="media-object" ng-src="{{ user.image }} ">
@@ -11,7 +11,6 @@
       </li>
       <li>
         <p>{{ user.email }}</p>
-        <p>Playing {{ user.currentlyPlaying }}</p>
       </li>
     </ul>
   </li>
