@@ -7945,5 +7945,9 @@ button.close {
 
 /*# sourceMappingURL=bootstrap.css.map */
 .media-object {
-  max-width: 60px;
+  max-width: 50px;
+}
+
+body {
+  list-style-type: none;
 }

@@ -1,4 +1,4 @@
-  <form class="form-inline">
+<form class="form-inline">
   <input ng-model="query" type="text"
     placeholder="Filter by" autofocus>
 </form>
@@ -12,7 +12,23 @@
     </a>
   </li>
   <li>Playing {{user.currentlyPlaying}}</li>
-  <li>
+  <!-- <li>
     <p>{{ user.email }}</p>
-  </li>
+  </li> -->
 </ul>
+
+<!-- <div class="row">
+  <div class="col-sm-6 col-md-4">
+    <ul ng-repeat="user in users.all | filter:query | orderBy: 'currentlyPlaying' ">
+    <div class="thumbnail">
+      <img class="media-object" ng-src="{{ user.image }}">
+      <div class="caption">
+        <a data-ui-sref="usersShow({ id: user._id })">
+          <h4 class="media-left">{{ user.fullname }}</h4>
+        </a>
+        <li>Playing {{user.currentlyPlaying}}</li>
+      </div>
+    </ul>
+    </div>
+  </div>
+</div> -->
