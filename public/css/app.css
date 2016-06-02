@@ -8007,6 +8007,7 @@ ul {
   background-image: url("http://sites.duke.edu/lit80s_02_f2013_augrealities/files/2013/12/gaymers.jpg");
   background-position: center;
   margin-top: 0px;
+  margin-bottom: 0px;
   height: 300px;
   top: 0;
   background-size: cover;
@@ -8025,10 +8026,26 @@ img.media-object {
   width: auto;
 }
 
+.show {
+  text-align: center;
+}
+
 img#kirby {
   position: absolute;
   top: 263px;
   left: 20px;
+}
+
+img#bbb {
+  position: absolute;
+  bottom: 0px;
+  left: -215px;
+}
+
+img#adventure {
+  position: absolute;
+  top: -40px;
+  left: 0px;
 }
 
 .jumobotron.container.play {
@@ -8047,7 +8064,6 @@ img#kirby {
   font-family: 'Cranberry', Courier New, Arial;
 }
 
-/* initial state */
 .pikachu {
   position: fixed;
   bottom: 0px;
@@ -8061,8 +8077,8 @@ img#kirby {
 .patrick {
   position: fixed;
   bottom: 0px;
-  left: 0px;
+  left: -50px;
   background: url(http://24.media.tumblr.com/8922b804cb8875ef65f8555367203b7b/tumblr_mkcrw6Wzga1r9zvlgo1_250.gif) no-repeat;
-  height: 400px;
+  height: 200px;
   width: 400px;
 }

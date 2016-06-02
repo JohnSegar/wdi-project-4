@@ -68,6 +68,7 @@ ul {
   background-image: url("http://sites.duke.edu/lit80s_02_f2013_augrealities/files/2013/12/gaymers.jpg");
   background-position: center;
   margin-top: 0px;
+  margin-bottom: 0px;
   height: 300px;
   top: 0;
   background-size: cover;
@@ -86,11 +87,26 @@ img.media-object {
   width: auto;
 }
 
+.show{
+  text-align: center;
+}
 
 img#kirby{
   position: absolute;
   top: 263px;
   left: 20px;
+}
+
+img#bbb{
+  position: absolute;
+  bottom: 0px;
+  left: -215px;
+}
+
+img#adventure{
+  position: absolute;
+  top: -40px;
+  left: 0px;
 }
 
 .jumobotron.container.play{
@@ -110,51 +126,6 @@ img#kirby{
 }
 
 
-
-// ****************ANIMATIONS***************
-/* initial state */
-  // #kirby1 {
-  //   position: fixed;
-  //   bottom: 0;
-  //   left: 0;
-  //   height: 400px;
-  //   color: #fff;
-  // }
-  // div.kirby {
-  //   position: absolute;
-  //   bottom: 10px;
-  //   left: 20px;
-  //   -webkit-transition: 3s ease-in;
-  //   -moz-transition: 3s ease-in;
-  //   -o-transition: 3s ease-in;
-  //   transition: 3s ease-in;
-  // }
-  // div.kirby div {
-  //   width: 120px;
-  //   height: 215px;
-  //   background: url(http://www.spriters-resource.com/resources/sheet_icons/3/3345.png) no-repeat;
-  //   -webkit-transition: 2s ease-in-out;
-  //   -moz-transition: 2s ease-in-out;
-  //   -o-transition: 2s ease-in-out;
-  //   transition: 2s ease-in-out;
-  // }
-  //
-  // /* hover final state */
-  // #kirby1:hover div.kirby {
-  //   -webkit-transform: translate(740px,-550px);
-  //   -moz-transform: translate(740px,-550px);
-  //   -o-transform: translate(740px,-550px);
-  //   -ms-transform: translate(740px,-550px);
-  //   transform: translate(740px,-550px);
-  // }
-  // #kirby1:hover div.kirby div {
-  //   -webkit-transform: rotate(70deg);
-  //   -moz-transform: rotate(70deg);
-  //   -o-transform: rotate(70deg);
-  //   -ms-transform: rotate(70deg);
-  //   transform: rotate(70deg);
-  // }
-
   .pikachu{
     position: fixed;
     bottom: 0px;
@@ -168,9 +139,9 @@ img#kirby{
   .patrick{
     position: fixed;
     bottom: 0px;
-    left: 0px;
+    left: -50px;
     background: url(http://24.media.tumblr.com/8922b804cb8875ef65f8555367203b7b/tumblr_mkcrw6Wzga1r9zvlgo1_250.gif) no-repeat;
     // background-image: center;
-    height:400px;
+    height:200px;
     width: 400px;
   }

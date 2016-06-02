@@ -17,6 +17,8 @@ function UsersIndexController(User, CurrentUser, $state){
   self.logout        = logout;
   self.checkLoggedIn = checkLoggedIn;
   self.makeKirbyFly  = makeKirbyFly;
+  self.makeBbbRoll   = makeBbbRoll;
+  self.adventureWalk = adventureWalk;
 
   function getUsers() {
     User.query(function(data){
@@ -67,4 +69,15 @@ function UsersIndexController(User, CurrentUser, $state){
     var hello = document.querySelector( 'img#kirby' );
     console.log(hello);
     $(hello).animate({"left":"100%", "top":"-50%" }, 2000, "swing");
+  }
+
+  function makeBbbRoll(){
+    var hola = document.querySelector( 'img#bbb' );
+    console.log(hola);
+    $('img#bbb').animate({"left":"100%"}, 2000);
+  }
+
+  function adventureWalk(){
+    var bonjour = document.querySelector( 'img#adventure' );
+    $('img#adventure').animate({"left":"100%"}, 2000);
   }
