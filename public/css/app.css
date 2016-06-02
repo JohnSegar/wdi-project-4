@@ -7984,8 +7984,8 @@ ul {
 }
 
 .userImage {
-  width: 350px;
-  height: 200px;
+  width: 1000px;
+  height: 500px;
   border: solid 2px #490A3D;
   background-image: cover;
 }
@@ -8056,12 +8056,14 @@ img#adventure {
   color: white;
   text-shadow: 1px 1px #ff0000;
   font-family: 'Cranberry', Courier New, Arial;
+  text-align: center;
 }
 
 #navbarPlay {
   color: white;
   text-shadow: 1px 1px #ff0000;
   font-family: 'Cranberry', Courier New, Arial;
+  text-align: center;
 }
 
 .pikachu {
