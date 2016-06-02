@@ -17,9 +17,13 @@ function User($resource, API){
         url: API +'/register',
         method: "POST"
       },
-      'login':      {
+      'login':    {
         url: API + '/login',
         method: "POST"
+      },
+      'search':   {
+        url: API + '/users/search',
+        method: 'POST'
       }
     }
   );

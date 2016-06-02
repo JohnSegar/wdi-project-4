@@ -116,3 +116,46 @@ ul {
     -ms-transform: rotate(70deg);
     transform: rotate(70deg);
   }
+
+  /* initial state */
+    // #koopa1 {
+    //   position: fixed;
+    //   bottom: 0;
+    //   right: 0;
+    //   height: 400px;
+    //   color: #fff;
+    // }
+    // div.koopa {
+    //   position: absolute;
+    //   bottom: 10px;
+    //   right: 20px;
+    //   -webkit-transition: 3s ease-in;
+    //   -moz-transition: 3s ease-in;
+    //   -o-transition: 3s ease-in;
+    //   transition: 3s ease-in;
+    // }
+    // div.koopa div {
+    //   width: 300px;
+    //   height: 300px;
+    //   background: url(https://upload.wikimedia.org/wikipedia/en/2/2d/Lakitu.png) no-repeat;
+    //   -webkit-transition: 2s ease-in-out;
+    //   -moz-transition: 2s ease-in-out;
+    //   -o-transition: 2s ease-in-out;
+    //   transition: 2s ease-in-out;
+    // }
+    //
+    // /* hover final state */
+    // #koopa1:hover div.koopa {
+    //   -webkit-transform: translate(-740px,550px);
+    //   -moz-transform: translate(-740px,550px);
+    //   -o-transform: translate(-740px,550px);
+    //   -ms-transform: translate(-740px,550px);
+    //   transform: translate(-740px,550px);
+    // }
+    // #koopa1:hover div.koopa div {
+    //   -webkit-transform: rotate(70deg);
+    //   -moz-transform: rotate(70deg);
+    //   -o-transform: rotate(70deg);
+    //   -ms-transform: rotate(70deg);
+    //   transform: rotate(70deg);
+    // }

@@ -29,9 +29,23 @@ function usersDelete(req, res){
   });
 }
 
+function search(req, res) {
+  var id = req.body.id;
+  User.findById(id, function(err, currentUser) {
+    if (err) return res.status(500).send(err);
+    User.find({currentlyPlaying: currentUser.currentlyPlaying},
+      function(err, users) {
+        if (err) return res.status(500).send(err);
+        return res.status(200).send({ users: users });
+      }
+    );
+  });
+}
+
 module.exports = {
   usersIndex:  usersIndex,
   usersShow:   usersShow,
   usersUpdate: usersUpdate,
-  usersDelete: usersDelete
+  usersDelete: usersDelete,
+  search: search
 };

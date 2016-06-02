@@ -22,4 +22,6 @@ router.route('/users/:id')
 
 router.route('/games').post(IGDBController);
 
+router.route('/users/search').post(usersController.search);
+
 module.exports = router;
