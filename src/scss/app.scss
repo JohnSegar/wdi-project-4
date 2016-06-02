@@ -7,16 +7,112 @@
 
  body{
    list-style-type: none;
+  //  background-color: black;
+  background-image: url("http://sites.duke.edu/lit80s_02_f2013_augrealities/files/2013/12/gaymers.jpg");
+  background-attachment: fixed;
+  background-repeat: none;
+  background-size: cover;
  }
 
 .row{
   list-style-type: none;
 }
 
+.name{
+  color: blue;
+}
+
+// *******currently playing*********
 .ng-binding{
+  list-style-type: none;
+  // color: white;
+  color: #BD1550;
+}
+
+.repeat{
   list-style-type: none;
 }
 
-.media-left.ng-binding{
-  list-style-type: none;
+// *****user show thumbnail*******
+ul {
+  padding: 0;
 }
+
+.thumbnail{
+  color: #BD1550;
+  background-color: black;
+  border: solid 2px #69D2E7;
+  font-family: 'Cranberry', Courier New, Arial;
+  padding: 0px;
+}
+
+.userImage{
+  width: 350px;
+  height: 250px;
+  border: solid 2px #69D2E7;
+  background-image: cover;
+}
+
+.form-inline{
+  padding: 10px;
+  text-align: center;
+}
+
+.navbar.navbar-default{
+  background-color: #490A3D;
+  border: #4e5180;
+  color: #5B0400;
+}
+
+
+.jumbotron {
+  background-image: url("http://benryves.com/images/cogwheel/24.12.2006/sg_1000_sega.gif");
+  background-size: cover;
+  border: solid 2px #69D2E7;
+}
+
+
+
+
+/* initial state */
+  #kirby1 {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 400px;
+    color: #fff;
+  }
+  div.kirby {
+    position: absolute;
+    bottom: 10px;
+    left: 20px;
+    -webkit-transition: 3s ease-in;
+    -moz-transition: 3s ease-in;
+    -o-transition: 3s ease-in;
+    transition: 3s ease-in;
+  }
+  div.kirby div {
+    width: 120px;
+    height: 215px;
+    background: url(http://www.spriters-resource.com/resources/sheet_icons/3/3345.png) no-repeat;
+    -webkit-transition: 2s ease-in-out;
+    -moz-transition: 2s ease-in-out;
+    -o-transition: 2s ease-in-out;
+    transition: 2s ease-in-out;
+  }
+
+  /* hover final state */
+  #kirby1:hover div.kirby {
+    -webkit-transform: translate(740px,-550px);
+    -moz-transform: translate(740px,-550px);
+    -o-transform: translate(740px,-550px);
+    -ms-transform: translate(740px,-550px);
+    transform: translate(740px,-550px);
+  }
+  #kirby1:hover div.kirby div {
+    -webkit-transform: rotate(70deg);
+    -moz-transform: rotate(70deg);
+    -o-transform: rotate(70deg);
+    -ms-transform: rotate(70deg);
+    transform: rotate(70deg);
+  }

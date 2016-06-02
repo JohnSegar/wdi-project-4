@@ -1,9 +1,8 @@
-<form class="form-inline">
+<!-- <form class="form-inline">
   <input ng-model="query" type="text"
     placeholder="Filter by" autofocus>
 </form>
-<div class="showing">
-<ul ng-repeat="user in users.all | filter:query | orderBy: 'currentlyPlaying' ">
+<ul class="repeat" ng-repeat="user in users.all | filter:query | orderBy: 'currentlyPlaying' ">
   <li>
     <img class="media-object" ng-src="{{ user.image }} ">
   </li>
@@ -13,24 +12,45 @@
     </a>
   </li>
   <li>Playing {{user.currentlyPlaying}}</li>
-  <!-- <li>
+  <li>
     <p>{{ user.email }}</p>
-  </li> -->
-</ul>
-</div>
+  </li>
+</ul> -->
 
-<!-- <div class="row">
-  <div class="col-sm-6 col-md-4">
-    <ul ng-repeat="user in users.all | filter:query | orderBy: 'currentlyPlaying' ">
+<form class="form-inline">
+  <input ng-model="query" type="text"
+    placeholder="Filter by" autofocus>
+</form>
+<div class="row-fluid">
+  <div class="col-md-4" ng-repeat="user in users.all | filter:query | orderBy: 'currentlyPlaying' ">
+    <ul>
     <div class="thumbnail">
-      <img class="media-object" ng-src="{{ user.image }}">
+      <img class="media-object" style="border: 1px solid #69D2E7" ng-src="{{ user.image }}">
       <div class="caption">
         <a data-ui-sref="usersShow({ id: user._id })">
-          <h4 class="media-left">{{ user.fullname }}</h4>
+          <h4 class="media-left" style="color:#F8CA00">{{ user.fullname }}</h4>
         </a>
         <li>Playing {{user.currentlyPlaying}}</li>
       </div>
     </ul>
     </div>
   </div>
+</div>
+
+<div id="kirby1">
+<div class="kirby">
+<div></div>
+</div>
+</div>
+
+<!-- <div class="card">
+  <ul ng-repeat="user in users.all | filter:query | orderBy: 'currentlyPlaying' ">
+  <img class="card-img-top" ng-src="{{ user.image }}" alt="Card image cap">
+  <div class="card-block">
+    <a data-ui-sref="usersShow({ id: user._id })">
+    <h4 class="card-title">{{ user.fullname }}</h4>
+    </a>
+    <li>Playing {{user.currentlyPlaying}}</li>
+  </div>
+</ul>
 </div> -->
