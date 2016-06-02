@@ -7958,12 +7958,8 @@ body {
   background-size: cover;
 }
 
-.row {
+.row-fluid {
   list-style-type: none;
-}
-
-.name {
-  color: blue;
 }
 
 .ng-binding {
@@ -7982,7 +7978,7 @@ ul {
 .thumbnail {
   color: #BD1550;
   background-color: black;
-  border: solid 2px #69D2E7;
+  border: solid 2px #490A3D;
   font-family: 'Cranberry', Courier New, Arial;
   padding: 0px;
 }
@@ -7990,7 +7986,7 @@ ul {
 .userImage {
   width: 350px;
   height: 200px;
-  border: solid 2px #69D2E7;
+  border: solid 2px #490A3D;
   background-image: cover;
 }
 
@@ -8063,48 +8059,14 @@ div.kirby div {
   transform: rotate(70deg);
 }
 
-/* initial state */
-#koopa1 {
+.pikachu {
   position: fixed;
-  bottom: 0;
-  right: 0;
+  bottom: 0px;
+  right: 0px;
+  background: url(http://pre15.deviantart.net/b363/th/pre/f/2013/078/c/4/pikachu__no_bg__by_cromarlimo-d5ylejv.png) no-repeat;
+  background-image: center;
   height: 400px;
-  color: #fff;
-}
-
-div.koopa {
-  position: absolute;
-  bottom: 10px;
-  right: 20px;
-  -webkit-transition: 3s ease-in;
-  -moz-transition: 3s ease-in;
-  -o-transition: 3s ease-in;
-  transition: 3s ease-in;
-}
-
-div.koopa div {
   width: 400px;
-  height: 400px;
-  background: url(https://upload.wikimedia.org/wikipedia/en/2/2d/Lakitu.png) no-repeat;
-  -webkit-transition: 2s ease-in-out;
-  -moz-transition: 2s ease-in-out;
-  -o-transition: 2s ease-in-out;
-  transition: 2s ease-in-out;
 }
 
-/* hover final state */
-#koopa1:hover div.koopa {
-  -webkit-transform: translate(-740px, -550px);
-  -moz-transform: translate(-740px, -550px);
-  -o-transform: translate(-740px, -550px);
-  -ms-transform: translate(-740px, -550px);
-  transform: translate(-740px, -550px);
-}
-
-#koopa1:hover div.koopa div {
-  -webkit-transform: rotate(70deg);
-  -moz-transform: rotate(70deg);
-  -o-transform: rotate(70deg);
-  -ms-transform: rotate(70deg);
-  transform: rotate(70deg);
-}
+/* initial state */
