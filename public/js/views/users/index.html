@@ -1,9 +1,9 @@
 <form class="form-inline">
   <input ng-model="query" type="text"
-    placeholder="Filter by" autofocus>
+    placeholder="Who's online?" autofocus>
 </form>
 <div class="row-fluid">
-  <div class="col-md-4" ng-repeat="user in users.all | filter:query | orderBy: 'currentlyPlaying' ">
+  <div class="col-md-4 user-card" ng-repeat="user in users.all | filter:query | orderBy: 'currentlyPlaying' ">
     <ul>
     <div class="thumbnail">
       <img class="media-object" style="border: 1px solid #490A3D" ng-src="{{ user.image }}">
@@ -19,26 +19,14 @@
 </div>
 
 <div class="pikachu"></div>
-
-<div id="kirby1">
-<div class="kirby">
-<div></div>
-</div>
-</div>
-<div id="koopa1">
-<div class="koopa">
-<div></div>
-</div>
+<div id="kirby" ng-click="users.makeKirbyFly()">
+  <img id="kirby" src="http://www.spriters-resource.com/resources/sheet_icons/3/3345.png">
 </div>
 
-<!-- <div class="card">
-  <ul ng-repeat="user in users.all | filter:query | orderBy: 'currentlyPlaying' ">
-  <img class="card-img-top" ng-src="{{ user.image }}" alt="Card image cap">
-  <div class="card-block">
-    <a data-ui-sref="usersShow({ id: user._id })">
-    <h4 class="card-title">{{ user.fullname }}</h4>
-    </a>
-    <li>Playing {{user.currentlyPlaying}}</li>
-  </div>
-</ul>
-</div> -->
+<div id="chicken" style="position:absolute; left: 489px; top: 258px;">
+  <img src="http://images.lingscars.com/images/header/webcams/chicken-ani.gif" alt>
+</div>
+
+<div id="damme" style="position:absolute; right: 50px; top: 185px; height: 300px">
+  <img src="http://www.caiman.us/freepix/3495-4.gif" alt>
+</div>

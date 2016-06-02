@@ -74,60 +74,80 @@ ul {
   border-bottom: 5px solid #490A3D;
 }
 
+.showHide:focus {
+  outline: none;
+}
+
+.user-card {
+  height: 400px;
+}
+
+img.media-object {
+  width: auto;
+}
 
 
+img#kirby{
+  position: absolute;
+  top: 263px;
+  left: 20px;
+}
 
+.jumobotron.container.play{
+  color: white;
+}
 
-
-
-
-
+#bs-example-navbar-collapse-1 a{
+  color: white;
+  text-shadow: 1px 1px #ff0000;
+  font-family: 'Cranberry', Courier New, Arial;
+}
 
 
 
 // ****************ANIMATIONS***************
 /* initial state */
-  #kirby1 {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    height: 400px;
-    color: #fff;
-  }
-  div.kirby {
-    position: absolute;
-    bottom: 10px;
-    left: 20px;
-    -webkit-transition: 3s ease-in;
-    -moz-transition: 3s ease-in;
-    -o-transition: 3s ease-in;
-    transition: 3s ease-in;
-  }
-  div.kirby div {
-    width: 120px;
-    height: 215px;
-    background: url(http://www.spriters-resource.com/resources/sheet_icons/3/3345.png) no-repeat;
-    -webkit-transition: 2s ease-in-out;
-    -moz-transition: 2s ease-in-out;
-    -o-transition: 2s ease-in-out;
-    transition: 2s ease-in-out;
-  }
-
-  /* hover final state */
-  #kirby1:hover div.kirby {
-    -webkit-transform: translate(740px,-550px);
-    -moz-transform: translate(740px,-550px);
-    -o-transform: translate(740px,-550px);
-    -ms-transform: translate(740px,-550px);
-    transform: translate(740px,-550px);
-  }
-  #kirby1:hover div.kirby div {
-    -webkit-transform: rotate(70deg);
-    -moz-transform: rotate(70deg);
-    -o-transform: rotate(70deg);
-    -ms-transform: rotate(70deg);
-    transform: rotate(70deg);
-  }
+  // #kirby1 {
+  //   position: fixed;
+  //   bottom: 0;
+  //   left: 0;
+  //   height: 400px;
+  //   color: #fff;
+  // }
+  // div.kirby {
+  //   position: absolute;
+  //   bottom: 10px;
+  //   left: 20px;
+  //   -webkit-transition: 3s ease-in;
+  //   -moz-transition: 3s ease-in;
+  //   -o-transition: 3s ease-in;
+  //   transition: 3s ease-in;
+  // }
+  // div.kirby div {
+  //   width: 120px;
+  //   height: 215px;
+  //   background: url(http://www.spriters-resource.com/resources/sheet_icons/3/3345.png) no-repeat;
+  //   -webkit-transition: 2s ease-in-out;
+  //   -moz-transition: 2s ease-in-out;
+  //   -o-transition: 2s ease-in-out;
+  //   transition: 2s ease-in-out;
+  // }
+  //
+  // /* hover final state */
+  // #kirby1:hover div.kirby {
+  //   -webkit-transform: translate(740px,-550px);
+  //   -moz-transform: translate(740px,-550px);
+  //   -o-transform: translate(740px,-550px);
+  //   -ms-transform: translate(740px,-550px);
+  //   transform: translate(740px,-550px);
+  // }
+  // #kirby1:hover div.kirby div {
+  //   -webkit-transform: rotate(70deg);
+  //   -moz-transform: rotate(70deg);
+  //   -o-transform: rotate(70deg);
+  //   -ms-transform: rotate(70deg);
+  //   transform: rotate(70deg);
+  // }
 
   .pikachu{
     position: fixed;
@@ -138,57 +158,3 @@ ul {
     height: 400px;
     width: 400px;
   }
-
-
-
-
-
-
-
-
-
-  /* initial state */
-    // #koopa1 {
-    //   position: fixed;
-    //   bottom: 0;
-    //   right: 0;
-    //   width: 200px;
-    //   height: 200px;
-    //   color: #fff;
-    // }
-    // div.koopa {
-    //   position: absolute;
-    //   bottom: 10px;
-    //   right: 20px;
-    //   -webkit-transition: 3s ease-in;
-    //   -moz-transition: 3s ease-in;
-    //   -o-transition: 3s ease-in;
-    //   transition: 3s ease-in;
-    //   width: 200px;
-    //   height: 200px;
-    // }
-    // div.koopa div {
-    //   width: 200px;
-    //   height: 200px;
-    //   background: url(https://upload.wikimedia.org/wikipedia/en/2/2d/Lakitu.png) no-repeat;
-    //   -webkit-transition: 2s ease-in-out;
-    //   -moz-transition: 2s ease-in-out;
-    //   -o-transition: 2s ease-in-out;
-    //   transition: 2s ease-in-out;
-    // }
-    //
-    // /* hover final state */
-    // #koopa1:hover div.koopa {
-    //   -webkit-transform: translate(-740px,-550px);
-    //   -moz-transform: translate(-740px,-550px);
-    //   -o-transform: translate(-740px,-550px);
-    //   -ms-transform: translate(-740px,-550px);
-    //   transform: translate(-740px,-550px);
-    // }
-    // #koopa1:hover div.koopa div {
-    //   -webkit-transform: rotate(70deg);
-    //   -moz-transform: rotate(70deg);
-    //   -o-transform: rotate(70deg);
-    //   -ms-transform: rotate(70deg);
-    //   transform: rotate(70deg);
-    // }

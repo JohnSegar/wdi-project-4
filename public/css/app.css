@@ -8013,52 +8013,35 @@ ul {
   border-bottom: 5px solid #490A3D;
 }
 
-/* initial state */
-#kirby1 {
-  position: fixed;
-  bottom: 0;
-  left: 0;
+.showHide:focus {
+  outline: none;
+}
+
+.user-card {
   height: 400px;
-  color: #fff;
 }
 
-div.kirby {
+img.media-object {
+  width: auto;
+}
+
+img#kirby {
   position: absolute;
-  bottom: 10px;
+  top: 263px;
   left: 20px;
-  -webkit-transition: 3s ease-in;
-  -moz-transition: 3s ease-in;
-  -o-transition: 3s ease-in;
-  transition: 3s ease-in;
 }
 
-div.kirby div {
-  width: 120px;
-  height: 215px;
-  background: url(http://www.spriters-resource.com/resources/sheet_icons/3/3345.png) no-repeat;
-  -webkit-transition: 2s ease-in-out;
-  -moz-transition: 2s ease-in-out;
-  -o-transition: 2s ease-in-out;
-  transition: 2s ease-in-out;
+.jumobotron.container.play {
+  color: white;
 }
 
-/* hover final state */
-#kirby1:hover div.kirby {
-  -webkit-transform: translate(740px, -550px);
-  -moz-transform: translate(740px, -550px);
-  -o-transform: translate(740px, -550px);
-  -ms-transform: translate(740px, -550px);
-  transform: translate(740px, -550px);
+#bs-example-navbar-collapse-1 a {
+  color: white;
+  text-shadow: 1px 1px #ff0000;
+  font-family: 'Cranberry', Courier New, Arial;
 }
 
-#kirby1:hover div.kirby div {
-  -webkit-transform: rotate(70deg);
-  -moz-transform: rotate(70deg);
-  -o-transform: rotate(70deg);
-  -ms-transform: rotate(70deg);
-  transform: rotate(70deg);
-}
-
+/* initial state */
 .pikachu {
   position: fixed;
   bottom: 0px;
@@ -8068,5 +8051,3 @@ div.kirby div {
   height: 400px;
   width: 400px;
 }
-
-/* initial state */

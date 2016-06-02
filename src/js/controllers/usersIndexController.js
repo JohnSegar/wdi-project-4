@@ -16,6 +16,7 @@ function UsersIndexController(User, CurrentUser, $state){
   self.login         = login;
   self.logout        = logout;
   self.checkLoggedIn = checkLoggedIn;
+  self.makeKirbyFly  = makeKirbyFly;
 
   function getUsers() {
     User.query(function(data){
@@ -61,3 +62,9 @@ function UsersIndexController(User, CurrentUser, $state){
 
   return self;
 }
+
+  function makeKirbyFly(){
+    var hello = document.querySelector( 'img#kirby' );
+    console.log(hello);
+    $(hello).animate({"left":"100%", "top":"-50%" }, 2000, "swing");
+  }

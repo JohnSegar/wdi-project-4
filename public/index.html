@@ -57,12 +57,27 @@
   <div class="jumbotron">
     <div class="container">
     </div>
-    <h2>Find people to play with</h2>
-    <p>Like Tinder for gaming</p>
-    <p>
-      <a class="btn btn-primary btn-lg" role="button" ui-sref="register">Join</a>
-    </p>
+    <div class "play">
+    <h2 style="color: white; font-size: 20px; text-shadow: 2px 2px #ff0000; ">Who's playing what?</h2>
+    <p style="color: white; text-shadow: 2px 2px #ff0000; font-family: 'Cranberry', Courier New, Arial;">Press Start to Login.</p>
+    <p style="color: white; text-shadow: 2px 2px #ff0000; font-family: 'Cranberry', Courier New, Arial;">Press Select to Register.</p>
   </div>
+
+    <!-- *******invisble buttons****** -->
+    <a class="btn btn-primary btn-lg" role="button" ui-sref="login" style="position:absolute; left: 630px; top: 150px; background: transparent; border:none; font-size: 0; width: 80px;">Join</a>
+    <a class="btn btn-primary btn-lg" role="button" ui-sref="register" style="position:absolute; left: 520px; top: 150px; border:none; width: 80px; font-size: 0; background: transparent; ">Join</a>
+  </div>
+
+<div ng-app="">
+  <button class="showHide" ng-click="showme=true" style="position:absolute; right: 400px; top: 190px; background: transparent; border:none; font-size: 0; width: 50px; height: 50px" >Show</a>
+  <button class="showHide" ng-click="showme=false" style="position:absolute; right: 490px; top: 190px; background: transparent; border:none; font-size: 0; width: 50px; height: 50px">Hide</button>
+
+  <div class="wrapper">
+    <p ng-hide="showme"></p>
+    <div ng-show="showme"><img src="http://www.dinofarmgames.com/wp-content/uploads/2015/05/chun-slight-speed-down-Copy.gif"></div>
+  </div>
+
+</div>
 
   <div class="container">
     <div class="row">
