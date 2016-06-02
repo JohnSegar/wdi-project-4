@@ -103,6 +103,12 @@ img#kirby{
   font-family: 'Cranberry', Courier New, Arial;
 }
 
+ #navbarPlay{
+  color: white;
+  text-shadow: 1px 1px #ff0000;
+  font-family: 'Cranberry', Courier New, Arial;
+}
+
 
 
 // ****************ANIMATIONS***************
@@ -156,5 +162,15 @@ img#kirby{
     background: url(http://pre15.deviantart.net/b363/th/pre/f/2013/078/c/4/pikachu__no_bg__by_cromarlimo-d5ylejv.png) no-repeat;
     background-image: center;
     height: 400px;
+    width: 400px;
+  }
+
+  .patrick{
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    background: url(http://24.media.tumblr.com/8922b804cb8875ef65f8555367203b7b/tumblr_mkcrw6Wzga1r9zvlgo1_250.gif) no-repeat;
+    // background-image: center;
+    height:400px;
     width: 400px;
   }
