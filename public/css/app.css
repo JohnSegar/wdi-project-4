@@ -7945,13 +7945,14 @@ button.close {
 
 /*# sourceMappingURL=bootstrap.css.map */
 .media-object {
-  max-width: 50px;
+  width: 555px;
+  max-height: 300px;
   list-style-type: none;
+  background-image: cover;
 }
 
 body {
   list-style-type: none;
-  background-image: url("http://sites.duke.edu/lit80s_02_f2013_augrealities/files/2013/12/gaymers.jpg");
   background-attachment: fixed;
   background-repeat: none;
   background-size: cover;
@@ -7988,7 +7989,7 @@ ul {
 
 .userImage {
   width: 350px;
-  height: 250px;
+  height: 200px;
   border: solid 2px #69D2E7;
   background-image: cover;
 }
@@ -8002,12 +8003,18 @@ ul {
   background-color: #490A3D;
   border: #4e5180;
   color: #5B0400;
+  margin-bottom: 0px;
+  border-radius: 0px;
 }
 
 .jumbotron {
-  background-image: url("http://benryves.com/images/cogwheel/24.12.2006/sg_1000_sega.gif");
+  background-image: url("http://sites.duke.edu/lit80s_02_f2013_augrealities/files/2013/12/gaymers.jpg");
+  background-position: center;
+  margin-top: 0px;
+  height: 300px;
+  top: 0;
   background-size: cover;
-  border: solid 2px #69D2E7;
+  border-bottom: 5px solid #490A3D;
 }
 
 /* initial state */
@@ -8057,3 +8064,47 @@ div.kirby div {
 }
 
 /* initial state */
+#koopa1 {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  height: 400px;
+  color: #fff;
+}
+
+div.koopa {
+  position: absolute;
+  bottom: 10px;
+  right: 20px;
+  -webkit-transition: 3s ease-in;
+  -moz-transition: 3s ease-in;
+  -o-transition: 3s ease-in;
+  transition: 3s ease-in;
+}
+
+div.koopa div {
+  width: 400px;
+  height: 400px;
+  background: url(https://upload.wikimedia.org/wikipedia/en/2/2d/Lakitu.png) no-repeat;
+  -webkit-transition: 2s ease-in-out;
+  -moz-transition: 2s ease-in-out;
+  -o-transition: 2s ease-in-out;
+  transition: 2s ease-in-out;
+}
+
+/* hover final state */
+#koopa1:hover div.koopa {
+  -webkit-transform: translate(-740px, -550px);
+  -moz-transform: translate(-740px, -550px);
+  -o-transform: translate(-740px, -550px);
+  -ms-transform: translate(-740px, -550px);
+  transform: translate(-740px, -550px);
+}
+
+#koopa1:hover div.koopa div {
+  -webkit-transform: rotate(70deg);
+  -moz-transform: rotate(70deg);
+  -o-transform: rotate(70deg);
+  -ms-transform: rotate(70deg);
+  transform: rotate(70deg);
+}

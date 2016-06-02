@@ -9,3 +9,19 @@
 <div></div>
 </div>
 </div>
+
+<div class="row-fluid">
+  <div class="col-md-4" ng-repeat="user in usersSameGame.users">
+    <ul>
+    <div class="thumbnail">
+      <img class="media-object" style="border: 1px solid #69D2E7" ng-src="{{ user.image }}">
+      <div class="caption">
+        <a data-ui-sref="usersShow({ id: user._id })">
+          <h4 class="media-left" style="color:#F8CA00">{{ user.fullname }}</h4>
+        </a>
+        <li>Playing {{user.currentlyPlaying}}</li>
+      </div>
+    </ul>
+    </div>
+  </div>
+</div>
